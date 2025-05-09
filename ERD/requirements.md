@@ -40,4 +40,4 @@ Create an ER diagram that outlines the database structure for the Airbnb clone.
 ## Diagram
 
 The ER diagram was created using [draw.io](https://draw.io).  
-You can find it in this folder: [ER-Diagram](ERD/airbnb_er.drawio.png)
+You can find it in this folder: [ER-Diagram](airbnb_er.drawio.png)
