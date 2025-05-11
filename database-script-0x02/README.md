@@ -9,8 +9,3 @@ The `seed.sql` script populates the database with realistic sample data for:
 - **Reviews** (Feedback from guests)
 - **Messages** (User communications)
 
-## Instructions
-1. Ensure the database schema is created (`schema.sql`).
-2. Execute the `seed.sql` script in MySQL:
-   ```sh
-   mysql -u username -p database_name < seed.sql
