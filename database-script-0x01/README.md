@@ -17,7 +17,7 @@ Each table includes appropriate constraints:
 - **Indexes** enhance query performance for frequent searches.
 
 ## How to Use
-1. Run `schema.sql` to create the database structure.
+1. Run [schema](schema.sql) to create the database structure.
 2. Insert sample data for testing.
 3. Query the tables for booking, payments, and reviews.
 
