@@ -93,7 +93,7 @@ RIGHT JOIN User U ON B.user_id = U.user_id;
 
 ## Subqueries
 
-### 1. 🏡 Properties with Average Rating Greater Than 4.0
+### 4. 🏡 Properties with Average Rating Greater Than 4.0
 
 **Description**: Selects all properties that have an average review rating higher than 4.0.
 
@@ -107,7 +107,7 @@ WHERE property_id IN (
     HAVING AVG(rating) > 4.0
 );
 ```
-### 2. 👤 Users with More Than 3 Bookings
+### 5. 👤 Users with More Than 3 Bookings
 
 ```sql
 SELECT *
@@ -118,14 +118,38 @@ WHERE (
     WHERE B.user_id = U.user_id
 ) > 3;
 ```
+## 📊 Aggregations & Window Functions
+
+### 6. 🧮 Total Number of Bookings by Each User
+```sql
+SELECT 
+    U.user_id,
+    U.first_name,
+    U.last_name,
+    COUNT(B.booking_id) AS total_bookings
+FROM User U
+LEFT JOIN Booking B ON U.user_id = B.user_id
+GROUP BY U.user_id, U.first_name, U.last_name;
+```
+### 7. 🏆 Rank Properties by Total Bookings (Using RANK)
+```sql
+SELECT 
+    P.property_id,
+    P.name,
+    COUNT(B.booking_id) AS total_bookings,
+    RANK() OVER (ORDER BY COUNT(B.booking_id) DESC) AS booking_rank
+FROM Property P
+LEFT JOIN Booking B ON P.property_id = B.property_id
+GROUP BY P.property_id, P.name;
+```
 
 
 ## 📁 Related Files
 
 **[schema.sql](../database-script-0x01/schema.sql)**: Contains table definitions and constraints for the database.
 **[joins_queries.sql](joins_queries.sql)**: contains joins in SQL format.
-
 **[subqueries.sql](subqueries.sql)**: Contains the subqueries in SQL format.
+**[aggregations_and_window_functions.sql](aggregations_and_window_functions.sql)**: Aggregates and window functions.
 
 
 
