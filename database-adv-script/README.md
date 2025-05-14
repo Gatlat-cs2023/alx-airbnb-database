@@ -123,7 +123,7 @@ WHERE (
 ## 📁 Related Files
 
 **[schema.sql](../database-script-0x01/schema.sql)**: Contains table definitions and constraints for the database.
-**[joins_queries.sql](joins_queries.sql)**: contains joins in SQL format
+**[joins_queries.sql](joins_queries.sql)**: contains joins in SQL format.
 **[subqueries.sql](subqueries.sql)**: Contains the subqueries in SQL format.
 
 
