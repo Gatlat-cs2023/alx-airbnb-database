@@ -77,4 +77,4 @@ Create an ER diagram that outlines the database structure for the Airbnb clone p
 ## 🖼️ Diagram
 
 The ER diagram was created using [draw.io](https://draw.io).  
-You can find it in this folder: [ER-Diagram](er_diagram.drawio.png)
+![ER-Diagram](er_diagram.drawio.png)
