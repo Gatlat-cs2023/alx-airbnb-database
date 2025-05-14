@@ -91,10 +91,40 @@ RIGHT JOIN User U ON B.user_id = U.user_id;
 **FULL OUTER JOIN**: Not directly supported in MySQL – must use `UNION` of `LEFT JOIN` and `RIGHT JOIN`.
 **Indexes**: Improve performance when joining on foreign keys (e.g., `user_id`, `property_id`).
 
+## Subqueries
+
+### 1. 🏡 Properties with Average Rating Greater Than 4.0
+
+**Description**: Selects all properties that have an average review rating higher than 4.0.
+
+```sql
+SELECT *
+FROM Property
+WHERE property_id IN (
+    SELECT property_id
+    FROM Review
+    GROUP BY property_id
+    HAVING AVG(rating) > 4.0
+);
+```
+### 2. 👤 Users with More Than 3 Bookings
+
+```sql
+SELECT *
+FROM User U
+WHERE (
+    SELECT COUNT(*)
+    FROM Booking B
+    WHERE B.user_id = U.user_id
+) > 3;
+```
+
+
 ## 📁 Related Files
 
 **[schema.sql](../database-script-0x01/schema.sql)**: Contains table definitions and constraints for the database.
-
+**[joins_queries.sql](joins_queries.sql)**: contains joins in SQL format
+**[subqueries.sql](subqueries.sql): Contains the subqueries in SQL format.
 
 
 
