@@ -93,7 +93,7 @@ RIGHT JOIN User U ON B.user_id = U.user_id;
 
 ## 📁 Related Files
 
-**`[schema.sql](../database-script-0x01/schema.sql)`**: Contains table definitions and constraints for the database.
+**[schema.sql](../database-script-0x01/schema.sql)**: Contains table definitions and constraints for the database.
 
 
 
