@@ -11,7 +11,8 @@ SELECT
     User.last_name,
     User.email
 FROM Booking
-INNER JOIN User ON Booking.user_id = User.user_id;
+INNER JOIN User ON Booking.user_id = User.user_id
+ORDER BY Booking.start_date DESC;  -- Added ORDER BY
 
 -- Left Joins
 SELECT 
@@ -23,7 +24,8 @@ SELECT
     Review.comment,
     Review.created_at
 FROM Property
-LEFT JOIN Review ON Property.property_id = Review.property_id;
+LEFT JOIN Review ON Property.property_id = Review.property_id
+ORDER BY Review.created_at DESC;  -- Added ORDER BY
 
 -- Simulate FULL OUTER JOIN using UNION of LEFT and RIGHT JOIN
 SELECT 
@@ -48,5 +50,5 @@ SELECT
     Booking.start_date,
     Booking.end_date
 FROM Booking
-RIGHT JOIN User ON Booking.user_id = User.user_id;
-
+RIGHT JOIN User ON Booking.user_id = User.user_id
+ORDER BY user_id ASC;  -- Added ORDER BY to final union
