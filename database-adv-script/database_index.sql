@@ -22,3 +22,12 @@ CREATE INDEX idx_property_id ON Property(property_id);
 -- Index for host_id (to optimize joins and queries related to a host's properties)
 CREATE INDEX idx_property_host_id ON Property(host_id);
 
+-- 4. Use EXPLAIN ANALYZE to evaluate a query using the index
+EXPLAIN ANALYZE
+SELECT 
+    B.booking_id,
+    B.user_id,
+    B.start_date,
+    B.end_date
+FROM Booking B
+WHERE B.user_id = 3;

@@ -18,3 +18,11 @@ FROM Property P
 LEFT JOIN Booking B ON P.property_id = B.property_id
 GROUP BY P.property_id, P.name;
 
+-- 3. Assign row numbers to bookings per user ordered by start_date
+SELECT 
+    B.booking_id,
+    B.user_id,
+    B.property_id,
+    B.start_date,
+    ROW_NUMBER() OVER (PARTITION BY B.user_id ORDER BY B.start_date) AS booking_row_number
+FROM Booking B;
