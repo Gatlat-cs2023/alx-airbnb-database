@@ -1,9 +1,9 @@
 -- Insert sample users
-INSERT INTO User (user_id, first_name, last_name, email, password_hash, phone_number, role)
+INSERT INTO user (user_id, first_name, last_name, email, password_hash, phone_number, role, age)
 VALUES 
-    ('uuid-1', 'Alice', 'Smith', 'alice@example.com', 'hashed_password_1', '+1234567890', 'guest'),
-    ('uuid-2', 'Bob', 'Johnson', 'bob@example.com', 'hashed_password_2', '+0987654321', 'host'),
-    ('uuid-3', 'Charlie', 'Brown', 'charlie@example.com', 'hashed_password_3', '+1122334455', 'admin');
+    ('uuid-1', 'Alice', 'Smith', 'alice@example.com', 'hashed_password_1', '+1234567890', 'guest', 30),
+    ('uuid-2', 'Bob', 'Johnson', 'bob@example.com', 'hashed_password_2', '+0987654321', 'host', 40),
+    ('uuid-3', 'Charlie', 'Brown', 'charlie@example.com', 'hashed_password_3', '+1122334455', 'admin', 22);
 
 -- Insert sample properties
 INSERT INTO Property (property_id, host_id, name, description, location, pricepernight)

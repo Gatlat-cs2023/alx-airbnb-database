@@ -1,4 +1,7 @@
 -- schema.sql for MySQL
+
+DROP TABLE IF EXISTS Message, Review, Payment, Booking, Property, User;
+
 -- User table
 CREATE TABLE User (
     user_id CHAR(36) PRIMARY KEY,
@@ -8,7 +11,8 @@ CREATE TABLE User (
     password_hash VARCHAR(255) NOT NULL,
     phone_number VARCHAR(20),
     role ENUM('guest', 'host', 'admin') NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    age INT
 );
 
 -- Property table
